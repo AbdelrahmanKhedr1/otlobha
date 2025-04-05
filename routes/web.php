@@ -24,9 +24,9 @@ use App\Livewire\Store\Item\Tag;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
 
-Livewire::setUpdateRoute(function ($handle) {
-    return Route::post('new_magpro22/public/livewire/update', $handle);
-});
+// Livewire::setUpdateRoute(function ($handle) {
+//     return Route::post('new_magpro22/public/livewire/update', $handle);
+// });
 
 // Broadcast::routes(['middleware' => ['web']]);
 
