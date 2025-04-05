@@ -7,6 +7,7 @@ use App\Observers\SubscriptionObserver;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -35,6 +36,10 @@ class AppServiceProvider extends ServiceProvider
         RateLimiter::for('drivers', function ($request) {
             return Limit::perMinute(30)->by(optional($request->user('driver'))->id ?: $request->ip());
         });
+
+        if (env('APP_ENV') === 'production') {
+            URL::forceScheme('https');
+        }
     }
 
 }
