@@ -30,8 +30,8 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
         ]);
 
-        Company::factory(20)->create();
-        Product::factory(50)->create();
-        Tag::factory(50)->create();
+        // Company::factory(20)->create();
+        // Product::factory(50)->create();
+        // Tag::factory(50)->create();
     }
 }
